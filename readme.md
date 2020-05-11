@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://avatars1.githubusercontent.com/u/42048915?s=200" alt="deno logo" align="center"/>
+  <img src="https://avatars1.githubusercontent.com/u/42048915?s=100" alt="deno logo" align="center"/>
   <br />
   <h3 align="center">deno-todos</h3>
   <p align="center">just playin' with deno 🦕</p>
