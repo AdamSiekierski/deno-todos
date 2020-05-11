@@ -5,6 +5,6 @@
   <p align="center">just playin' with deno 🦕</p>
 </div>
 
-## What's this project all about?
+#### What's this project all about?
 
 Deno is coming out very soon, so I've decided to come out with small project. This is a simple REST API for Todo app made with Deno and `alosaur`
