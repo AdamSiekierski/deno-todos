@@ -7,17 +7,19 @@ const { cwd } = Deno;
 export interface Todo {
   title: string;
   content: string;
-  created: Date;
+  created: number;
   id: number;
 }
 
 @Injectable()
 export class TodosService {
+  constructor(private todosFile: string = 'todos.json') {}
+
   getTodos(): Todo[] {
     let todos: Todo[] = [];
 
-    if (existsSync('todos.json')) {
-      todos = readJsonSync('todos.json') as Todo[];
+    if (existsSync(this.todosFile)) {
+      todos = readJsonSync(this.todosFile) as Todo[];
     }
 
     return todos;
@@ -26,20 +28,20 @@ export class TodosService {
   addTodo(title: string, content: string): Todo {
     let todos: Todo[] = [];
 
-    if (existsSync('todos.json')) {
-      todos = readJsonSync('todos.json') as Todo[];
+    if (existsSync(this.todosFile)) {
+      todos = readJsonSync(this.todosFile) as Todo[];
     }
 
     const todo: Todo = {
       title: title,
       content: content,
-      created: new Date(),
+      created: Date.now(),
       id: 10000000 + Math.floor(Math.random() * 90000000),
     };
 
     todos.push(todo);
 
-    writeJsonSync('todos.json', todos);
+    writeJsonSync(this.todosFile, todos);
 
     return todo;
   }
